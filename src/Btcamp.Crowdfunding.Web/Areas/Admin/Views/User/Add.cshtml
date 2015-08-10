@@ -1,0 +1,129 @@
+﻿@model UserViewModel
+
+@{
+    ViewBag.Title = "添加用户";
+    //Html.EnableClientValidation();
+    //Html.EnableUnobtrusiveJavaScript();
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-pencil-square-o fa-fw "></i>
+                用户
+                <span>
+                    >
+                    添加
+                </span>
+            </h1>
+        </div>
+    </div>
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                        <h2>添加用户</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <form class="form-horizontal" action="@Url.Action("Add")" method="post" enctype="multipart/form-data">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.UserName, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                @Html.TextBoxFor(e => e.UserName, new { @class = "form-control", placeholder = "请输入用户名" })
+                                            </div>
+                                            @Html.ValidationMessageFor(e => e.UserName)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.Email, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                                                @Html.TextBoxFor(e => e.Email, new { @class = "form-control", placeholder = "请输入登陆邮箱" })
+                                            </div>
+                                            @Html.ValidationMessageFor(e => e.Email)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.Password, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                @Html.PasswordFor(e => e.Password, new { @class = "form-control", placeholder = "请输入登陆密码" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.Password)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                @Html.PasswordFor(e => e.ConfirmPassword, new { @class = "form-control", placeholder = "请输入登陆重复密码" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.ConfirmPassword)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.PhoneNumber, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                                @Html.TextBoxFor(e => e.PhoneNumber, new { @class = "form-control", placeholder = "请输入联系方式" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.PhoneNumber)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.AuthorityUrl, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-header"></i></span>
+                                                @Html.TextBoxFor(e => e.AuthorityUrl, new { @class = "form-control", placeholder = "请选择头像", type = "file" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.AuthorityUrl)
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="hidden" name="ReturnUlr" value="@ViewBag.Url" />
+                                            <a href="@Url.Action("Index")" class="btn btn-default" type="reset">取消</a>
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fa fa-save"></i>
+                                                保存
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <!-- end widget grid -->
+</div>

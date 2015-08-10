@@ -1,0 +1,18 @@
+﻿.state-error {
+    color: #a90329;
+}
+
+    .state-error input, .state-error .input-group-addon {
+        background: #fff0f0;
+        border-color: #a90329;
+    }
+
+.state-success input, .state-success .input-group-addon {
+    background: #f0fff0;
+    border-color: #7dc27d;
+}
+
+
+.field-validation-error {
+    color: #a90329;
+}

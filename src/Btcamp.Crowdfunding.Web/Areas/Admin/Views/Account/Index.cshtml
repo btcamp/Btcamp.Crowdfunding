@@ -1,0 +1,207 @@
+﻿@model PagedList.IPagedList<Btcamp.Crowdfunding.Core.Entitys.Account>
+
+
+@{
+    ViewBag.Title = "账户列表";
+    ChangePasswordViewModel changePasswordModel = new ChangePasswordViewModel();
+}
+<style>
+    .lock {
+        color: red;
+    }
+</style>
+<div id="content">
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-user"></i> </span>
+                        <h2>账户列表</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div role="content">
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body no-padding">
+                            <div class="dataTables_wrapper form-inline no-footer">
+                                <div class="dt-toolbar">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div id="dt_basic_filter" class="dataTables_filter">
+                                            <label>
+                                                @*<a href="@Url.Action("Add")" class="btn btn-success">
+                                                        <i class="fa fa-plus"></i> 添加
+                                                    </a>*@
+                                                <button class="btn btn-danger" id="restBtn">
+                                                    <i class="fa fa-lock"></i> 重置密码
+                                                </button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table id="datatable" class="table table-striped table-bordered table-hover dataTable no-footer">
+                                    <thead>
+                                        <tr style="cursor:pointer">
+                                            <th>
+                                                <i class="fa fa-square-o"></i>
+                                            </th>
+                                            <th>编号</th>
+                                            <th>手机号</th>
+                                            <th>姓名</th>
+                                            <th>身份证号</th>
+                                            <th>昨日利息</th>
+                                            <th>总利息</th>
+                                            <th>昨日盈利</th>
+                                            <th>金额</th>
+                                            <th>状态</th>
+                                            <th>收货人/地址</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            int index = 1;
+                                            bool isLock = false;
+                                            foreach (Btcamp.Crowdfunding.Core.Entitys.Account item in Model.ToList())
+                                            {
+                                                isLock = item.IsLock;
+                                                <tr @(isLock ? "class=lock" : string.Empty) style="cursor:pointer" data-id="@item.Id">
+                                                    <td>
+                                                        <i class="fa fa fa-square-o"></i>
+                                                        <input type="hidden" name="name" value="@item.Id" />
+                                                    </td>
+                                                    <td>@index</td>
+                                                    <td>@item.PhoneNumber</td>
+                                                    <td>@item.Name</td>
+                                                    <td>@item.IDNumber</td>
+                                                    <td>@item.Interest.ToString("f2")</td>
+                                                    <td>@item.SumInterest.ToString("f2")</td>
+                                                    <td>@item.Profit.ToString("f2")</td>
+                                                    <td>@item.Amount.ToString("f2")</td>
+                                                    <td>@(isLock ? "锁定" : "正常")</td>
+                                                    <td><a class="address" href="@Url.Action("Address")" data-id="@item.Id">点击查看地址</a></td>
+                                                    <td>
+                                                        <a href="@Url.Action("Modify", new { Id = item.Id })" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i>&nbsp;编辑</a>&nbsp;
+                                                        <a href="@Url.Action("Del", new { Id = item.Id })" class="btn btn-danger btn-xs oper"><i class="fa  fa-times"></i>&nbsp;删除</a>&nbsp;
+                                                        @{
+                                                if (isLock)
+                                                {
+                                                    <a href="@Url.Action("Unlock", new { Id = item.Id })" class="btn btn-danger btn-xs oper"><i class="fa fa-unlock-alt"></i>&nbsp;解锁</a>
+                                                }
+                                                        }
+
+                                                    </td>
+                                                </tr>
+                                                index++;
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                                <div class="dt-toolbar-footer">
+                                    @Html.Partial("Page", Model)
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <!-- end widget grid -->
+    @Html.Partial("Details")
+
+    @Html.Partial("Address")
+</div>
+
+@Html.Partial("ChangePassword", changePasswordModel)
+
+@section pagespecific{
+    <script>
+        $(function () {
+            $(".oper").click(function () {
+                ajaxSubmit($(this).attr("href"), null, null);
+                return false;
+            });
+            $("#datatable tbody tr").click(function () {
+                var $this = $(this);
+                var cls = $this.attr("class");
+                if (cls != undefined && cls.indexOf("success") >= 0) {
+                    $this.removeClass("success");
+                    $this.find("td:first i").removeClass("fa-check-square-o").addClass("fa-square-o");
+                } else {
+                    var $siblings = $this.siblings();
+                    $this.addClass("success");
+                    $this.find("td:first i").removeClass("fa-square-o").addClass("fa-check-square-o");
+                    $siblings.removeClass("success");
+                    $siblings.find("td:first i").removeClass("fa-check-square-o").addClass("fa-square-o");
+                }
+            }).dblclick(function () {
+                var id = $(this).data("id");
+
+                modalLoading("请求用户数据，请稍后");
+                var url = '@Url.Action("Get")';
+                $.get(url + "/" + id, function (data) {
+                    bootbox.hideAll();
+                    //$scope.model = data;
+                    setAccountDetail(data);
+                    $("#accountDetails").modal("show");
+                });
+            });
+
+            $(".address").click(function () {
+                var id = $(this).data("id");
+                //获取当前用户的地址
+                $.getJSON("@Url.Action("Address")" + "/" + id, function (result) {
+                    var liststr = "";
+                    for (var i in result) {
+                        liststr += '<div class="alert alert-info fade in"><strong>收货人姓名：' + result[i].Name + '；</strong>联系电话：' + result[i].PhoneNumber + '；邮编：' + result[i].ZipCode + '；<br/><strong>详细地址：' + result[i].DetailAddress + '</strong></div>'
+                    }
+                    $("#addressList").html(liststr);
+                    delete liststr;
+                    $("#addressDetails").modal("show");
+                });
+                
+                return false;
+            });
+
+            function setAccountDetail(model) {
+                for (var key in model) {
+                    console.log(key);
+                    $("#accountDetails").find("#" + key).val(model[key]);
+                }
+            }
+
+            $("#restBtn").click(function () {
+                var selectItem = $("#datatable tbody tr.success");
+                if (selectItem.length <= 0) {
+                    finAlert("请选择要重置密码的用户", false);
+                }
+                else {
+                    var id = selectItem.find("td:first input[type='hidden']").val();
+                    var tdName = selectItem.find("td:eq(3)").text();
+                    var tdPhone = selectItem.find("td:eq(2)").text();
+                    var name = (tdName == null || tdName == undefined || tdName == "") ? tdPhone : tdName;
+                    $("#myModal").find("#Id").val(id);
+                    $("#myModal").find("#userName").val(name);
+                    $("#myModal").modal("show");
+                }
+                return false;
+            });
+
+            $("#myModal").on("hidden.bs.modal", function () {
+                $("#myModal").find("#Id").val("");
+                $("#myModal").find("#userName").val("");
+                $("#myModal").find("#Password").val("");
+                $("#myModal").find("#ConfirmPassword").val("");
+            });
+        });
+    </script>
+}

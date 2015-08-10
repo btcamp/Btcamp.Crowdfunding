@@ -1,0 +1,45 @@
+﻿<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+<script src="/scripts/libs/jquery-2.1.1.min.js"></script>
+<script src="/scripts/libs/jquery-ui-1.10.3.min.js"></script>
+<!-- IMPORTANT: SmartAdmin Core -->
+@Scripts.Render("~/script")
+<!-- Voice command : plugin -->
+<script src="~/scripts/speech/voicecommand.min.js"></script>
+
+<!-- SmartChat UI : plugin -->
+@Scripts.Render("~/scripts/smart-chat")
+
+<!-- DataTables : plugin -->
+@Scripts.Render("~/scripts/datatables")
+
+<!-- jQGrid : plugin -->
+@Scripts.Render("~/scripts/jq-grid")
+
+<!-- Forms : plugin -->
+@Scripts.Render("~/scripts/forms")
+
+<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip, Morris, Sparkline, EasyPie -->
+@Scripts.Render("~/scripts/charts")
+
+<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+@Scripts.Render("~/scripts/vector-map")
+
+<!-- Full Calendar -->
+@Scripts.Render("~/scripts/full-calendar")
+
+@Scripts.Render("~/scripts/messenger")
+
+<!-- DO NOT REMOVE : GLOBAL FUNCTIONS! -->
+<script>
+    $(document).ready(function () {
+        pageSetUp();
+        drawBreadCrumb();
+    });
+</script>
+
+@if (@Model is HelperResult)
+{
+    @Model
+}
+
+
