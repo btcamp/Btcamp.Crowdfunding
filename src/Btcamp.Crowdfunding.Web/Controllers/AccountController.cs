@@ -13,5 +13,17 @@ namespace Btcamp.Crowdfunding.Web.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

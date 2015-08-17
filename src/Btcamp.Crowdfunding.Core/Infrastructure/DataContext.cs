@@ -28,19 +28,12 @@ namespace Btcamp.Crowdfunding.Core.Infrastructure
                 .WithMany(a => a.Withdrawals)
                 .HasForeignKey(d => d.AccountId)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Address>()
-                .HasRequired(a => a.Account)
-                .WithMany(a => a.Address)
-                .HasForeignKey(a => a.AccountId)
-                .WillCascadeOnDelete(false);
         }
 
         public IDbSet<UserInfo> UserInfo { get; set; }
         public IDbSet<Account> Account { get; set; }
 
-        public IDbSet<Address> Address { get; set; }
-
+        public IDbSet<City> Citys { get; set; }
 
         public IDbSet<Deposit> Deposit { get; set; }
         public IDbSet<Withdrawals> Withdrawals { get; set; }

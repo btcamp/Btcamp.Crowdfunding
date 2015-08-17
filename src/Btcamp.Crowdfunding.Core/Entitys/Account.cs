@@ -22,45 +22,36 @@ namespace Btcamp.Crowdfunding.Core.Entitys
         [StringLength(36)]
         public string LoginPwd { get; set; }
 
+        [Required]
+        [StringLength(36)]
+        public string PayPwd { get; set; }
+
         [StringLength(32)]
         public string Name { get; set; }
+
+        [Required]
+        public CustomEnum.Sex Sex { get; set; }
 
         [StringLength(18)]
         public string IDNumber { get; set; }
 
-        [StringLength(64)]
-        public string Bank { get; set; }
-        [StringLength(64)]
-        public string BankNumber { get; set; }
-
+        [StringLength(256)]
+        public string Address { get; set; }
+        [StringLength(256)]
+        public string HeaderPath { get; set; }
         /// <summary>
-        /// 开户行 分行
+        /// 自我介绍
         /// </summary>
-        [StringLength(64)]
-        public string BankBranch { get; set; }
-
-
-        [StringLength(32)]
-        public string MT4Pwd { get; set; }
-        [StringLength(32)]
-        public string MT4InvestorPwd { get; set; }
+        [StringLength(512)]
+        public string Introduction { get; set; }
 
         public double Amount { get; set; }
-
-        [StringLength(32)]
-        public string MT4Account { get; set; }
-
-        public decimal Interest { get; set; }
-
-        public decimal SumInterest { get; set; }
-
-        public decimal Profit { get; set; }
 
         public virtual ICollection<Deposit> Deposits { get; set; }
 
         public virtual ICollection<Withdrawals> Withdrawals { get; set; }
-
-        public virtual ICollection<Address> Address { get; set; }
         public bool IsLock { get; set; }
     }
+
+
 }
