@@ -16,8 +16,7 @@ namespace Btcamp.Crowdfunding.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },//Home,Index
-                namespaces: new string[] { "Btcamp.Crowdfunding.Web.Controllers" }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.error-title .error-img{
+	text-align:center;
+	}
+.error-title .error-img >img{
+	margin-right:407px;
+	margin-top:170px;
+	}
+.error-title .error-img .mi-brother{
+	font-size:23px;
+	}
+.error-title .error-img .mi-brother img{
+	margin-top:-85px;
+	}
+.error-title .btn-back{
+	margin-top:25px;
+	text-align:center;
+	font-size:14px;
+	margin-right:58px;
+	}
+.error-title .btn-back a{
+	padding-right:40px;
+	color:#52b4ff;
+	}
+.border-delta{
+	display:inline-block;
+	width:0;
+	height:0;
+	border-right:4px solid #52b4ff;
+	border-top:4px solid transparent;
+	border-bottom:4px solid transparent;
+	}
+.error-content{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:180px;
+	font-size:14px;
+	margin-top:29px;
+	line-height:44px;
+	}
+.error-content ul{
+	width:320px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.error-content .subject {
+	text-align:center;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom:40px;
+	}
+
+@media (max-width: 767px){
+	body{
+		min-width:375px;
+	}
+	.error-content{
+		margin:0 auto 30px;
+	}
+	.error-content ul{
+		width:320px;
+		margin:auto;
+	}
+	.error-title .error-img > img{
+		width:100px;
+		margin-right:237px;
+	}
+	.error-title .error-img .mi-brother{
+		font-size:18px;
+	}
+	.error-title .error-img .mi-brother img{
+		width:100px;
+	}
+
+}

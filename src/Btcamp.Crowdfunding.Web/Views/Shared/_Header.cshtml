@@ -1,20 +1,33 @@
-﻿    <!-- HEADER -->
-<header id="header" style="padding: 0px;background-image:none;background-color:#35363B">
-    @*<div id="logo-group" class="col-sm-">
-            <span id="logo"> <img src="~/content/img/logo.png" alt="SmartAdmin"> </span>
-        </div>*@
-    <div class="row" style="width:100%">
-        <div class="col-xs-3">
-            @Html.Partial("_TopRight")
+﻿<header class="navbar navbar-static-top">
+    <div class="container">
+
+
+
+
+
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="Default.aspx.htm" tppabs="http://www.yimihaodi.com/" class="navbar-brand"><img src="content/images/logo.png" tppabs="/content/images/logo.png"></a>
         </div>
-        <div class="col-xs-7" style="padding:0px;margin:0 auto;line-height:49px;font-size:20px;font-weight:bold;text-align:center;color:#fff">
-            <span id="price">0.00</span> 美元/克
-        </div>
-        <section class="col-xs-2" id="top-right" style="padding:0px">
-            @*<div class="pull-right">
-                
-            </div>*@
-        </section>
+        <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" aria-expanded="true">
+            <ul class="nav navbar-nav navbar-right">
+                <li id="liHome" class="active"><a href="Default.aspx.htm" tppabs="http://www.yimihaodi.com/">首页</a></li>
+                <li id="liInvest"><a href="Project/ProjectList.htm" tppabs="http://www.yimihaodi.com/Project/ProjectList">投资项目</a></li>
+                <li id="liGuide"><a href="guide-3.aspx.htm" tppabs="http://www.yimihaodi.com/guide.aspx">新手指南</a></li>
+                <li id="liAbout"><a href="about-2.aspx.htm" tppabs="http://www.yimihaodi.com/about.aspx">关于我们</a></li>
+                <li class="lr-box">
+
+                    <a class="btn-login" href="User/Login.htm" tppabs="http://www.yimihaodi.com/User/Login"><img src="content/images/icon-lock.png" tppabs="http://www.yimihaodi.com/content/images/icon-lock.png">登录</a>
+                    <a class="btn-register" href="member/register.aspx.htm" tppabs="http://www.yimihaodi.com/member/register.aspx">注册</a>
+
+
+                </li>
+            </ul>
+        </nav>
     </div>
 </header>
-<!-- END HEADER -->

@@ -1,0 +1,414 @@
+.banner {
+    background-image: url("../images/banner-about-us.png"/*tpa=http://www.yimihaodi.com/content/images/banner-about-us.png*/);
+    margin-bottom: 40px;
+}
+
+.p-title {
+    font-size: 32px;
+    color: #494949;
+    text-align: center;
+    line-height: 1.2em;
+    padding: 20px 0;
+    width: 90%;
+    margin: auto auto 30px;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+}
+.p-title:after {
+    content: '';
+    width: 200px;
+    height: 3px;
+    background-color: #ffd200;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    bottom: -1px;
+}
+
+.trend-title {
+	color: #494949;
+	font-size: 32px;
+	line-height: 1em;
+	padding-bottom: 18px;
+	border-bottom: 1px solid #e3e3e3;
+	position: relative;
+	margin-bottom: 30px;
+}
+.trend-title:after {
+	content: '';
+	width: 2em;
+	height: 3px;
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	background-color: #ffd200;
+}
+
+.top-info-box {
+	border: 1px solid #dfdfdf;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+.top-info-box .title {
+	max-height: 72px;
+	font-size: 24px;
+	color: #494949;
+	line-height: 1.5em;
+	overflow: hidden;
+	margin: 20px 0px 10px 15px;
+}
+.top-info-box .time {
+	color: #b3b3b3;
+	font-size: 14px;
+	line-height: 1em;
+	margin: 10px 0px 10px 15px;
+}
+.top-info-box .text {
+	font-size: 14px;
+	color: #494949;
+	line-height: 2em;
+	max-height: 140px;
+	overflow: hidden;
+	margin: 10px 0px 10px 15px;
+}
+.top-info-box .btn {
+	font-size: 16px;
+	line-height: 1em;
+	padding: 15px 30px;
+	margin: 20px 0px 20px 15px;
+}
+.top-info-box img {
+	max-width: 100%;
+	display: block;
+	margin: 0 0 0 auto;
+}
+
+
+ul.trend-list {
+	margin-bottom: 30px;
+}
+ul.trend-list > li {
+	padding: 22px 1px;
+	border-bottom: 1px solid #dddddd;
+}
+ul.trend-list > li .trend-box {
+	display: block;
+}
+ul.trend-list > li .trend-box:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+ul.trend-list > li .trend-box .img-box {
+	width: 150px;
+	height: 150px;
+	float: left;
+	margin-right: 30px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+ul.trend-list > li .trend-box .content {
+	overflow: hidden;
+	display: block;
+}
+ul.trend-list > li .trend-box .content .title {
+	display: block;
+	font-size: 24px;
+	color: #494949;
+	line-height: 1.2em;
+	margin-bottom: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+ul.trend-list > li .trend-box .content .text {
+	font-size: 14px;
+	line-height: 2em;
+	margin-bottom: 10px;
+	color: #494949;
+	height: 84px;
+	overflow: hidden;
+}
+ul.trend-list > li .trend-box .content .time {
+	font-style: 12px;
+	color: #b3b3b3;
+	line-height: 1em;
+}
+
+
+.trend-slide {
+	padding-left: 30px;
+	margin-bottom: 50px;
+}
+.trend-slide img {
+	width: 100%;
+	margin-bottom: 15px;
+}
+.trend-slide ul > li {
+	border-bottom: 1px solid #ddd;
+}
+.trend-slide ul > li > a {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 16px;
+	color: #292929;
+	line-height: 1em;
+	padding: 17px 1px;
+}
+
+
+.pagination-box {
+	margin-bottom: 50px;
+}
+
+
+.trend-detail {
+	width: 90%;
+	margin: auto auto 30px;
+}
+.trend-detail .title {
+	text-align: center;
+	color: #464646;
+	line-height: 1.3em;
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+.trend-detail .time {
+	width: 90%;
+	font-size: 14px;
+	color: #303030;
+	line-height: 1em;
+	text-align: center;
+	padding-bottom: 20px;
+	margin: auto auto 20px;
+	border-bottom: 1px solid #e3e3e3;	
+}
+.trend-detail .text {
+
+	font-size: 14px;
+	color: #6e6e6e;
+	line-height: 2.2em;
+}
+.trend-detail .text img {
+	display: block;
+	margin: 10px auto;
+	max-width: 100%;
+}
+.trend-detail .btn-back {
+	display: block;
+	margin: 30px auto 60px;
+	width: 140px;
+	text-align: center;
+	padding: 0;
+	height: 42px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.trend-detail .detail-bottom {
+	margin: 60px auto;
+	padding-top: 30px;
+	border-top: 1px solid #b9b9b9;
+}
+.trend-detail .detail-bottom .link-box {
+	font-size: 14px;
+	color: #474747;
+	line-height: 1.5em;
+	margin-bottom: 10px;
+}
+.trend-detail .detail-bottom .link-box a {
+	color: #474747;
+	margin-left: 15px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+.trend-detail .detail-bottom .link-box a:hover {
+	color: #ffd200;
+}
+
+
+@media (max-width: 1199px) {
+	.trend-slide {
+		padding-left: 15px;
+		margin-bottom: 40px;
+	}
+	.top-info-box .title {
+		font-size: 22px;
+		margin: 10px 0px 10px 15px;
+		max-height: 56px;
+		line-height: 1.3em;
+	}
+	.top-info-box .btn {
+		padding: 10px 30px;
+		margin: 0px 0px 15px 15px;
+	}
+	.pagination-box .pagination-list a, .pagination-box .pagination-list span {
+		min-width: 34px;
+		height: 34px;
+		line-height: 32px;
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	.pagination-box .pagination-list {
+	}
+}
+@media (max-width: 991px) {
+	.trend-title {
+		font-size: 24px;
+	}
+	.top-info-box .title {
+		font-size: 18px;
+		margin-top: 5px;
+		max-height: 46px;
+	}
+	.top-info-box .time {
+		font-size: 13px;
+	}
+	.top-info-box .text {
+		font-size: 13px;
+		max-height: 104px;
+	}
+	.top-info-box .btn {
+		padding: 7px 30px;
+		margin: 0px 0px 5px 15px;
+		font-size: 14px;
+	}
+	.trend-title {
+		font-size: 20px;
+	}
+	.trend-slide ul > li > a {
+		font-size: 14px;
+	}
+	ul.trend-list > li .trend-box .img-box {
+		width: 130px;
+		height: 130px;
+		margin-right: 20px;
+	}
+	ul.trend-list > li .trend-box .content .title {
+		font-size: 20px;
+		line-height: 1.1em;
+		margin-bottom: 10px;
+	}
+	ul.trend-list > li .trend-box .content .text {
+		font-size: 13px;
+		margin-bottom: 8px;
+		height: 78px;
+	} 
+	.trend-slide {
+		padding-left: 0;
+	}
+}
+@media (max-width: 767px) {
+	.top-info-box .title {
+		margin: 0 0 10px 0;
+	}
+	.top-info-box .time {
+		font-size: 12px;
+		margin: 0 0 10px 0;
+	}
+	.top-info-box .text {
+		margin: 0 0 10px 0;
+	}
+	.top-info-box .btn {
+		width: 100%;
+		margin: 0 0 15px 0;
+	}
+	ul.trend-list > li .trend-box .img-box {
+		width: 70px;
+		height: 70px;
+		margin-right: 15px;
+	}
+	ul.trend-list > li .trend-box .content .title {
+		font-size: 16px;
+		font-weight: bold;
+		line-height: 1.2em;
+		margin-bottom: 13px;
+	}
+	ul.trend-list > li .trend-box .content .text {
+		font-size: 13px;
+		line-height: 1em;
+		margin-bottom: 13px;
+		height: 1em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	ul.trend-list {
+		margin-bottom: 20px;
+	}
+	ul.trend-list > li {
+		padding: 15px 0px;
+	}
+	.pagination-box .pagination-list a, .pagination-box .pagination-list span {
+		min-width: 30px;
+		height: 30px;
+		line-height: 28px;
+		font-size: 12px;
+		margin: 0 5px 10px;
+	}
+	.pagination-box .pagination-skip .text {
+		font-size: 12px;
+		height: 30px;
+		line-height: 30px;
+	}
+	.pagination-box .pagination-skip input {
+		width: 34px;
+		height: 30px;
+		padding: 5px 2px;
+		font-size: 12px;
+	}
+	.pagination-box .pagination-skip .btn-skip {
+		min-width: 30px;
+		height: 30px;
+		line-height: 28px;
+		font-size: 12px;
+	}
+	.pagination-box {
+		margin-bottom: 30px;
+	}
+	.trend-title {
+		padding-bottom: 10px;
+		margin-bottom: 15px;
+	}
+	.trend-slide ul > li > a {
+		font-size: 13px;
+		padding: 15px 0px;
+	}
+	.trend-slide {
+		margin-bottom: 20px;
+	}
+	.banner .b-tabs .b-tab {
+		width: 25%;
+	}
+	.banner {
+		margin-bottom: 20px;
+	}
+
+	.trend-detail .title {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+	.trend-detail .time {
+		padding-bottom: 15px;
+		margin: auto auto 15px;
+	}
+	.trend-detail .text {
+		font-size: 13px;
+	}
+	.trend-detail .btn-back {
+		margin: 15px auto 30px;
+	}
+	.trend-detail .detail-bottom {
+		margin: 30px auto;
+		padding-top: 20px;
+	}
+	.trend-detail .detail-bottom .link-box {
+		line-height: 1.3em;
+	}
+}

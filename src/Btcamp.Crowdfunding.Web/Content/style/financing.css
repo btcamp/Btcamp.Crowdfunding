@@ -1,0 +1,570 @@
+* {
+	word-break: break-all;
+}
+.banner {
+	background-image: url("../images/banner-financing.jpg"/*tpa=http://www.yimihaodi.com/content/images/banner-financing.jpg*/);
+}
+
+.p-title {
+    font-size: 32px;
+    color: #494949;
+    text-align: center;
+    line-height: 1.2em;
+    padding: 20px 0;
+    width: 90%;
+    margin: auto auto 30px;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+}
+.p-title:after {
+    content: '';
+    width: 200px;
+    height: 3px;
+    background-color: #ffd200;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    bottom: -1px;
+}
+
+.p-title-sub {
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	color: #59564f;
+	line-height: 1.1em;
+	padding-bottom: 20px;
+	position: relative;
+	margin-bottom: 15px;
+}
+.p-title-sub:after {
+	content: '';
+	position: absolute;
+	width: 1em;
+	height: 3px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -0.5em;
+	background-color: #ffd200;
+}
+
+.banner .title-sub {
+	font-size: 36px;
+	line-height: 1.2em;
+	margin-top: 15px;
+	color: #fff;
+}
+.banner .btn {
+	font-size: 24px;
+	margin-top: 35px;
+	padding: 8px 45px;
+}
+
+.index-content .p-text {
+	font-size: 14px;
+	line-height: 2.2em;
+	text-align: center;
+}
+
+ul.advantage-list {
+	padding: 15px 0;
+}
+ul.advantage-list > li {
+	padding: 25px 16px;
+}
+.advantage-box {
+	display: block;
+}
+.advantage-box .img-box {
+	display: block;
+	margin: auto;
+	width: 140px;
+	height: 140px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	margin-bottom: 25px;
+	border: solid 1px #494949;
+	background-image: url("../images/icons-advantage.png"/*tpa=http://www.yimihaodi.com/content/images/icons-advantage.png*/);
+	background-repeat: no-repeat;
+	background-position: 29px 18px;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	transition: all .3s;
+}
+.advantage-box .img-box:hover {
+	background-color: #ffd200;
+	border-color: #ffd200;
+	background-position: 29px -148px;
+}
+
+.advantage-box .title {
+	color: #404040;
+	font-size: 24px;
+	line-height: 1.5em;
+	margin-bottom: 3px;
+	text-align: center;
+}
+.advantage-box .title-sub {
+	color: #404040;
+	font-size: 18px;
+	line-height: 1.5em;
+	margin-bottom: 8px;
+	text-align: center;
+}
+.advantage-box .text {
+	color: #404040;
+	font-size: 14px;
+	text-align: left;
+	line-height: 1.8em;
+}
+
+.about-yimi-box {
+	text-align: center;
+}
+.about-yimi-box .img-box {
+	display: block;
+	margin: auto auto 30px;
+	width: 250px;
+	height: 250px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.about-yimi-box .title {
+	font-size: 32px;
+	color: #494949;
+	line-height: 1.2em;
+	margin-bottom: 5px;
+}
+.about-yimi-box .text {
+	font-size: 18px;
+	color: #494949;
+	line-height: 1.3em;
+}
+
+ul.faq-list {
+	border: 1px solid #d7d7d7;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-bottom: 30px;
+}
+ul.faq-list li {
+	position: relative;	
+}
+ul.faq-list li b {
+	position: absolute;
+	right: 15px;
+	top: 16px;
+	width: 28px;
+	height: 28px;
+	line-height: 26px;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	background-color: #353c44;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+}
+ul.faq-list li.active b {
+	background-color: #ffd200;
+}
+ul.faq-list li b:after {
+	content: '+';
+}
+ul.faq-list li.active b:after {
+	content: '-';
+}
+
+ul.faq-list li .question-box {
+	height: 60px;
+	line-height: 60px;
+	font-size: 16px;
+	color: #252525;
+	padding: 0 50px 0 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+ul.faq-list li:not(:last-child) .question-box {
+	border-bottom: 1px solid #e4e4e4;
+}
+ul.faq-list li.active .question-box {
+	color: #ffd200;
+	font-weight: bold;
+}
+ul.faq-list li .answer-box {
+	height: 0;
+	font-size: 14px;
+	padding: 0 15px;
+	overflow: hidden;
+	line-height: 32px;
+	-webkit-transition: all .4s;
+	-moz-transition: all .4s;
+	transition: all .4s;
+}
+ul.faq-list li.active .answer-box {
+	height: auto;
+	padding: 7px 15px;
+}
+ul.faq-list li.active:not(:last-child) .answer-box {
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.form-feedback .text {
+	font-size: 16px;
+	line-height: 1.9em;
+	color: #59564f;
+	text-align: center;
+	margin-bottom: 11px;
+}
+.form-feedback input {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #d7d7d7;
+	height: 48px;
+	line-height: 46px;
+	padding: 10px;
+	color: #59564f;
+	font-size: 18px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+.form-feedback textarea {
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #d7d7d7;
+	height: 180px;
+	line-height: 1.5em;
+	padding: 10px;
+	resize: none;
+	color: #59564f;
+	font-size: 18px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+.form-feedback .img-code {
+	height: 48px;
+}
+.form-feedback .btn-submit {
+	width: 100%;
+	height: 54px;
+	line-height: 52px;
+	font-size: 24px;
+	font-weight: bold;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.special-list {
+	text-align: center;
+}
+.special-list img {
+	max-width: 100%;
+}
+.special-list .s-box {
+	text-align: left;
+	margin-top: 10px;
+	position: relative;
+}
+.special-list .s-box.active:before {
+	content: '';
+	position: absolute;
+	left: 20px;
+	width: 1px;
+	height: 100%;
+	z-index: -1;
+	background-color: #dfdfdf;
+}
+.special-list .s-box:first-child {
+	margin-top: 50px;
+}
+.special-list .s-box .num {
+	font-size: 14px;
+	font-weight: bold;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	margin-right: 25px;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	background-color: #59564f;
+	-webkit-transition: all .15s;
+	-moz-transition: all .15s;
+	-ms-transition: all .15s;
+	transition: all .15s;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.special-list .s-box.active .num {
+	background-color: #ffd200;
+}
+.special-list .s-box .content {
+	overflow: hidden;
+}
+.special-list .s-box .content .title {
+	font-size: 30px;
+	color: #565656;
+	line-height: 38px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.special-list .s-box .content .text {
+	display: none;
+	font-size: 15px;
+	color: #565656;
+	line-height: 2em;
+	margin-bottom: 20px;
+}
+.special-list .s-box.active .content .text {
+	display: block;
+}
+
+.lb-customer {
+
+}
+.lb-customer .carousel-inner > .item {
+	padding: 20px 70px;
+}
+.lb-customer .carousel-inner > .item:after, .lb-customer .carousel-inner > .item .content .info-box:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+.lb-customer .carousel-inner > .item img {
+	width: 260px;
+	float: left;
+	margin-right: 65px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+}
+.lb-customer .carousel-inner > .item .content {
+	overflow: hidden;
+	padding-top: 25px;
+}
+.lb-customer .carousel-inner > .item .content .text {
+	line-height: 2.3em;
+	font-size: 16px;
+	color: #565656;
+}
+.lb-customer .carousel-inner > .item .content .info-box {
+	float: right;
+	position: relative;
+	padding-top: 18px;
+	padding-left: 120px;
+	min-height: 90px;
+}
+.lb-customer .carousel-inner > .item .content .info-box .img-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90px;
+	height: 90px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.lb-customer .carousel-inner > .item .content .name {
+	font-size: 24px;
+	color: #565656;
+	font-weight: bold;
+	line-height: 1em;
+	margin-bottom: 10px;
+}
+.lb-customer .carousel-inner > .item .content .desc {
+	font-size: 16px;
+	color: #565656;
+	line-height: 1.2em;
+}
+.lb-customer .carousel-control.left, .lb-customer .carousel-control.right {
+	background-image: none;
+	width: 40px;
+}
+.lb-customer .carousel-control.left img, .lb-customer .carousel-control.right img {
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+}
+.lb-customer .carousel-control.left img {
+	left: 2px;
+}
+.lb-customer .carousel-control.right img {
+	right: 2px;
+}
+
+.p-2, .p-4 {
+	background-color: #f4f4f4;
+}
+.p-1, .p-2, .p-3, .p-4, .p-5 {
+	padding: 50px 0;
+}
+
+
+@media (max-width: 1199px) {
+	.special-list .s-box:first-child {
+		margin-top: 20px;
+	}
+	.lb-customer .carousel-inner > .item {
+		padding: 20px 50px;
+	}
+	.lb-customer .carousel-inner > .item img {
+		width: 240px;
+		margin-right: 40px;
+	}
+	.lb-customer .carousel-inner > .item .content {
+		padding-top: 5px;
+	}
+	.lb-customer .carousel-inner > .item .content .text {
+		line-height: 2em;
+	}
+}
+@media (max-width: 991px) {
+	.about-yimi-box .img-box {
+		width: 200px;
+		height: 200px;
+	}
+
+	.special-list .s-box:first-child {
+		margin-top: 0;
+	}
+	.special-list .s-box .num {
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+		margin-right: 15px;
+	}
+	.special-list .s-box .content .title {
+		font-size: 24px;
+		line-height: 36px;
+	}
+	.special-list .s-box .content .text {
+		font-size: 14px;
+		margin-bottom: 0;
+	}
+
+	.lb-customer .carousel-inner > .item img {
+		width: 160px;
+		margin-right: 25px;
+	}
+	.lb-customer .carousel-inner > .item .content {
+		padding-top: 0;
+	}
+	.lb-customer .carousel-inner > .item .content .text {
+		font-size: 14px;
+		line-height: 1.8em;
+		margin-bottom: 5px;
+	}
+	.lb-customer .carousel-inner > .item .content .info-box  {
+		min-height: 70px;
+		padding-top: 8px;
+		padding-left: 85px;
+	}
+	.lb-customer .carousel-inner > .item .content .info-box .img-box {
+		width: 70px;
+		height: 70px;
+	}
+
+}
+@media (max-width: 767px) {
+	.p-title {
+		font-size: 20px;
+	}
+
+	.p-title-sub {
+		font-size: 18px;
+		line-height: 1.1em;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+
+	ul.faq-list li .question-box {
+		font-size: 15px;
+	}
+	.form-feedback .text {
+		font-size: 13px;
+		line-height: 1.8em;
+		margin-bottom: 10px;
+	}
+	.form-feedback input {
+		height: 44px;
+		line-height: 42px;
+		font-size: 14px;
+	}
+	.form-feedback textarea {
+		font-size: 14px;
+		height: 120px;
+	}
+	.form-feedback .img-code {
+		height: 44px;
+	}
+	.form-feedback .btn-submit {
+		height: 44px;
+		line-height: 42px;
+		font-size: 18px;
+	}
+
+	.advantage-box .img-box {
+		margin-bottom: 15px;
+	}
+	.advantage-box .title {
+		font-size: 20px;
+	}
+	.advantage-box .title-sub {
+		font-size: 16px;
+		margin-bottom: 3px;
+	}
+	.advantage-box .text {
+		line-height: 1.5em;
+		text-align: center;
+	}
+
+	.p-1, .p-2, .p-3, .p-4, .p-5 {
+		padding: 30px 0;
+	}
+
+	.about-yimi-box {
+		margin-bottom: 30px;
+	}
+	.special-list img {
+		margin-top: 20px;
+	}
+
+	.lb-customer .carousel-inner > .item img {
+		display: block;
+		width: 100%;
+		float: none;
+		margin-bottom: 15px;
+	}
+}
+
+
+

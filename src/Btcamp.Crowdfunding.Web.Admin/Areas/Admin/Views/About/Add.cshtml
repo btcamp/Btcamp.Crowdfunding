@@ -1,0 +1,117 @@
+﻿@model AboutViewModel
+
+@{
+    ViewBag.Title = "添加关于";
+}
+
+<div id="content">
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-12">
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-eye"></i> </span>
+                        <h2>添加版本</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <form class="form-horizontal" action="@Url.Action("Add")" method="post" enctype="multipart/form-data">
+                                <fieldset>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.PhoneNumber, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-phone" style="height:17px;width:17px;"></i></span>
+                                                @Html.TextBoxFor(e => e.PhoneNumber, new { @class = "form-control", placeholder = "请输入客服电话" })
+                                            </div>
+                                            @Html.ValidationMessageFor(e => e.PhoneNumber)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.QQGroupNumber, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-qq" style="height:17px;width:17px;"></i></span>
+                                                @Html.TextBoxFor(e => e.QQGroupNumber, new { @class = "form-control", placeholder = "请输入QQ官方群号" })
+                                            </div>
+                                            @Html.ValidationMessageFor(e => e.QQGroupNumber)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.WeChatNumber, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                                @Html.TextBoxFor(e => e.WeChatNumber, new { @class = "form-control", placeholder = "请输入微信公众号" })
+                                            </div>
+                                            @Html.ValidationMessageFor(e => e.WeChatNumber)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.VersionNumber, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"  ><i class=" fa fa-skype" style="height:17px;width:17px;"></i></span>
+                                                @Html.TextBoxFor(e => e.VersionNumber, new { @class = "form-control", placeholder = "请输入版本号" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.VersionNumber)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.Contents, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-file" style="height:17px;width:17px;"></i></span>
+                                                @Html.TextAreaFor(e => e.Contents, new { @class = "form-control", placeholder = "请输入显示内容", rows = "5" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.Contents)
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(e => e.PhotoUrl, new { @class = "col-md-2 control-label" })
+                                        <div class="col-md-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-header" style="height:17px;width:17px;"></i></span>
+                                                @Html.TextBoxFor(e => e.PhotoUrl, new { @class = "form-control", placeholder = "请选择图片", type = "file" })
+                                            </div>
+
+                                            @Html.ValidationMessageFor(e => e.PhotoUrl)
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="hidden" name="ReturnUlr" value="@ViewBag.Url" />
+                                            <a href="@Url.Action("Index")" class="btn btn-default" type="reset">取消</a>
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fa fa-save"></i>
+                                                保存
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+            </article>
+        </div>
+
+    </section>
+    <!-- end widget grid -->
+</div>

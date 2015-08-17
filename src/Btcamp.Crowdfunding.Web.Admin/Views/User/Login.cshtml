@@ -1,0 +1,82 @@
+﻿@model Btcamp.Crowdfunding.Web.Admin.Models.UserLoginViewModel
+
+@{
+    ViewBag.PageId = "extr-page";
+    ViewBag.PageClass = "animated fadeInDown";
+    ViewBag.Title = "登陆";
+}
+<div id="content" class="container">
+    <div class="row">
+        @{ Html.RenderPartial("_LoginText"); }
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+            <div class="well no-padding">
+                <form action="@Url.Action("login")" method="post" id="login-form" class="smart-form client-form">
+                    <header>
+                        登录
+                    </header>
+                    @Html.HiddenFor(m => m.ReturnUrl)
+                    @Html.AntiForgeryToken()
+                    <fieldset>
+                        <section>
+                            <label class="label">登录邮箱</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                @Html.TextBoxFor(m => m.Email)
+                                @Html.ValidationMessageFor(m => m.Email)
+                                <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>请输入登录邮箱</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="label">登录密码</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-lock"></i>
+                                @Html.PasswordFor(m => m.Password)
+                                @Html.ValidationMessageFor(m => m.Password)
+                                <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> 输入密码</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="checkbox">
+                                <input type="checkbox" name="rememberMe" id="chkRemember" value="true" checked="checked">
+                                <input type="hidden" name="rememberMe" value="false" />
+                                <i></i>记住登录
+                            </label>
+                        </section>
+                    </fieldset>
+                    <footer>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary">
+                            登录
+                        </button>
+                    </footer>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section pagespecific {
+    <script type="text/javascript">
+        $(function () {
+            if (localStorage) {
+                var str = localStorage.getItem("loginInfo");
+                if (str != null) {
+                    try {
+                        var ele = JSON.parse(str);
+                        $("#Email").val(ele.email);
+                        $("#Password").val(ele.password);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
+            }
+            $("#btnSubmit").click(function () {
+                if ($("#chkRemember").val()) {
+                    if (localStorage) {
+                        var login = { email: $("#Email").val(), password: $("#Password").val() };
+                        localStorage.setItem("loginInfo", JSON.stringify(login));
+                    }
+                }
+            });
+        });
+    </script>
+}
+

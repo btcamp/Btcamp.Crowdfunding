@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 [assembly: AssemblyTitle("Btcamp.Crowdfunding.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -21,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0af6d3a2-0b89-4e4e-84ea-4d389021c270")]
+[assembly: Guid("aadb8b83-d292-4043-8bfc-5497677d60fb")]
 
 // Version information for an assembly consists of the following four values:
 //
