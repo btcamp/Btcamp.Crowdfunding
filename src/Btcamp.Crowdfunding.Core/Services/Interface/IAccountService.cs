@@ -12,7 +12,7 @@ namespace Btcamp.Crowdfunding.Core.Services.Interface
     public interface IAccountService : IService<Account>
     {
         Account AccountLoginByPhoneNumber(string phoneNumber, string pwd);
-
+        Account AccountLoginByUserName(string userName, string pwd);
         void RegisterAccount(Account account);
     }
 }

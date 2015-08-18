@@ -1,10 +1,8 @@
-﻿
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>
-        一米好地 房产众筹 - Beta
+        比特城邦众筹 | @ViewBag.Title
     </title>
     <link rel="shortcut icon" href="content/images/favicon.ico" />
     <meta name="renderer" content="webkit" />
@@ -29,7 +27,9 @@
         <link rel="stylesheet" type="text/css" href="content/style/block.css" tppabs="http://www.yimihaodi.com/content/style/block.css" />
         <link rel="stylesheet" type="text/css" href="content/style/app.css" tppabs="http://www.yimihaodi.com/content/style/app.css" />*@
 
-    @RenderSection("css",false)
+    @Styles.Render("~/css")
+
+    @RenderSection("css", false)
 
     <style type="text/css">
         @@-ms-viewport {
@@ -55,6 +55,22 @@
         @@viewport {
             width: device-width;
         }
+
+        .state-error .input-validation-error {
+            border-color: red;
+        }
+
+        .state-error span {
+            border-color: red;
+            color:red;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+        .messenger-message-inner {
+            color:#f0f0f0 !important;
+        }
     </style>
 
     <script type="text/javascript">
@@ -67,15 +83,6 @@
             );
             document.querySelector('head').appendChild(msViewportStyle);
         }
-
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "../hm.baidu.com/hm.js-237228d7e7724bff0c4ed484f47f415a"/*tpa=http://hm.baidu.com/hm.js?237228d7e7724bff0c4ed484f47f415a*/;
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-
     </script>
     <meta />
 </head>
@@ -93,10 +100,9 @@
         <img src="content/images/btn-back-to-top.png" tppabs="http://www.yimihaodi.com/content/images/btn-back-to-top.png">
         <div class="text">TOP</div>
     </div>
-    <script type="text/javascript">
-        $(".ewm").hover(function () { $("#ewm_" + $(this).attr("t")).show(); }, function () { $("#ewm_" + $(this).attr("t")).hide(); });
-    </script>
-    @RenderSection("script",false)
+    @Scripts.Render("~/script")
+
+    @RenderSection("script", false)
 </body>
 </html>
 <script>
@@ -105,22 +111,4 @@
         var r = window.location.search.substr(1).match(reg);
         if (r != null) return unescape(r[2]); return null;
     }
-
-    //    $(function() {
-    //        var parentId = GetQueryString("parentId");
-    //        if (parentId !== null) {
-    //            $.removeCookie('parentId');
-    //            $.cookie("parentId", parentId, { expires: 7 });
-    //        }
-    //    });
-
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "../hm.baidu.com/hm.js-237228d7e7724bff0c4ed484f47f415a"/*tpa=http://hm.baidu.com/hm.js?237228d7e7724bff0c4ed484f47f415a*/;
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
 </script>

@@ -8,6 +8,6 @@ namespace Btcamp.Crowdfunding.Core.CustomEnum
 {
     public enum Sex
     {
-        男,女
+        Male, Female
     }
 }

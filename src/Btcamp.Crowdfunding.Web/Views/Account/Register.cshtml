@@ -1,0 +1,83 @@
+﻿@model AccountRegisterViewModel
+
+@{
+    ViewBag.Title = "用户注册";
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@section css{
+    @Styles.Render("~/register/css")
+}
+<section class="register-content">
+    <div class="container" id="div_reg">
+        <div class="title">投资<b>注册</b></div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <form class="form-horizontal" id="regForm" action="@Url.Action("Register")" method="post">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                        <div class="input-group col-md-9">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = "请输入有效的邮箱", @class = "form-control input-lg" })
+                        </div>
+                        @Html.ValidationMessageFor(e => e.Email, string.Empty, new { @class = "col-md-offset-4" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+                        <div class="input-group col-md-9">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            @Html.TextBoxFor(m => m.Name, new { placeholder = "2-14个字符：英文、数字或中文", @class = "form-control input-lg" })
+                        </div>
+                        @Html.ValidationMessageFor(e => e.Name, string.Empty, new { @class = "col-md-offset-4" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                        <div class="input-group col-md-9">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            @Html.PasswordFor(m => m.Password, new { placeholder = "8-16个数字+字母(符号)，区分大小写", @class = "form-control input-lg" })
+                        </div>
+                        @Html.ValidationMessageFor(e => e.Password, string.Empty, new { @class = "col-md-offset-4" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-3 control-label" })
+                        <div class="input-group col-md-9">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "8-16个字符，区分大小写", @class = "form-control input-lg" })
+                        </div>
+                        @Html.ValidationMessageFor(e => e.ConfirmPassword, string.Empty, new { @class = "col-md-offset-4" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ValidateCode, new { @class = "col-md-3 control-label" })
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(m => m.ValidateCode, new { placeholder = "请输入验证码", @class = "form-control input-lg" })
+                        </div>
+                        <div class="col-md-4">
+                            <img id="validCode" onclick="this.src = '@Url.Action("Code")?' + Math.random()" src="@Url.Action("Code")" style="cursor: pointer;" title="点击刷新验证码" alt="点击刷新验证码">
+                        </div>
+                        @Html.ValidationMessageFor(e => e.ValidateCode, string.Empty, new { @class = "col-md-offset-4" })
+                    </div>
+                    @*<div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <input type="checkbox" id="chkAgreement" />
+                            <a href="../clause-11.aspx.htm" target="_black" class="text-protocol">我已经阅读并同意《比特城邦》协议 </a>
+                        </div>
+                    </div>*@
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <input type="submit" id="btnSubmit" class="btn btn-primary btn-lg btn-block" value="立即注册" />
+                            <span class="text">已注册<a href="../User/Login.htm" tppabs="http://www.yimihaodi.com/User/Login" class="go-login">立即登录</a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</section>
+@section script{
+    @Scripts.Render("~/register/scripts")
+}

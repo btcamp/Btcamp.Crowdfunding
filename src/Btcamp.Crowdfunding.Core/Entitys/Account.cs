@@ -11,7 +11,6 @@ namespace Btcamp.Crowdfunding.Core.Entitys
     [Table("Account")]
     public class Account : BaseEntity
     {
-        [Required]
         [StringLength(32)]
         public string PhoneNumber { get; set; }
 
@@ -20,16 +19,14 @@ namespace Btcamp.Crowdfunding.Core.Entitys
 
         [Required]
         [StringLength(36)]
-        public string LoginPwd { get; set; }
+        public string Password { get; set; }
 
-        [Required]
         [StringLength(36)]
         public string PayPwd { get; set; }
 
         [StringLength(32)]
         public string Name { get; set; }
 
-        [Required]
         public CustomEnum.Sex Sex { get; set; }
 
         [StringLength(18)]
@@ -37,6 +34,7 @@ namespace Btcamp.Crowdfunding.Core.Entitys
 
         [StringLength(256)]
         public string Address { get; set; }
+
         [StringLength(256)]
         public string HeaderPath { get; set; }
         /// <summary>

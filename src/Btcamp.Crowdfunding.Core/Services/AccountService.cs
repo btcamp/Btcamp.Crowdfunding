@@ -19,12 +19,19 @@ namespace Btcamp.Crowdfunding.Core.Services
         public Account AccountLoginByPhoneNumber(string phoneNumber, string pwd)
         {
             string md5pwd = pwd.ToMd5String();
-            return base.Get(e => e.PhoneNumber == phoneNumber && e.LoginPwd == md5pwd);
+            return base.Get(e => e.PhoneNumber == phoneNumber && e.Password == md5pwd);
         }
 
         public void RegisterAccount(Account account)
         {
             base.Add(account);
+        }
+
+
+        public Account AccountLoginByUserName(string userName, string pwd)
+        {
+            string md5pwd = pwd.ToMd5String();
+            return base.Get(e => e.Name == userName && e.Password == md5pwd);
         }
     }
 }

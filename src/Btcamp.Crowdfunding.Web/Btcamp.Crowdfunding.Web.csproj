@@ -41,6 +41,22 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -96,7 +112,13 @@
     <Content Include="Content\font-awesome-ie7.min-1.css" />
     <Content Include="Content\font-awesome-ie7.min.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\ajax-loader2.gif" />
     <Content Include="Content\images\banner-about-us.png" />
     <Content Include="Content\images\banner-financing.jpg" />
     <Content Include="Content\images\banner-guide.png" />
@@ -175,11 +197,20 @@
     <Content Include="Content\Plugins\swiper\js\swiper.min.js" />
     <Content Include="Content\script\bootstrap.min.js" />
     <Content Include="Content\script\common.js" />
+    <Content Include="Content\script\customer.js" />
     <Content Include="Content\script\jquery-1.10.2.js" />
     <Content Include="Content\script\jquery-1.11.3.js" />
+    <Content Include="Content\script\jquery-form.min.js" />
     <Content Include="Content\script\jquery.cookie.js" />
     <Content Include="Content\script\jquery.validate.extend.js" />
     <Content Include="Content\script\jquery.validate.js" />
+    <Content Include="Content\script\jquery.validate.min.js" />
+    <Content Include="Content\script\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\script\messenger\bootbox.min.js" />
+    <Content Include="Content\script\messenger\messenger-theme-flat.js" />
+    <Content Include="Content\script\messenger\messenger-theme-future.js" />
+    <Content Include="Content\script\messenger\messenger.js" />
+    <Content Include="Content\script\messenger\messenger.min.js" />
     <Content Include="Content\script\slider.js" />
     <Content Include="Content\script\util.js" />
     <Content Include="Content\style\about_us.css" />
@@ -194,6 +225,13 @@
     <Content Include="Content\style\index.css" />
     <Content Include="Content\style\investment_list-1.css" />
     <Content Include="Content\style\investment_list.css" />
+    <Content Include="Content\style\messenger\messenger-spinner.css" />
+    <Content Include="Content\style\messenger\messenger-theme-air.css" />
+    <Content Include="Content\style\messenger\messenger-theme-block.css" />
+    <Content Include="Content\style\messenger\messenger-theme-flat.css" />
+    <Content Include="Content\style\messenger\messenger-theme-future.css" />
+    <Content Include="Content\style\messenger\messenger-theme-ice.css" />
+    <Content Include="Content\style\messenger\messenger.css" />
     <Content Include="Content\style\register.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="Content\style\trend.css" />
@@ -247,14 +285,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\ResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +321,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

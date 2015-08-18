@@ -1,10 +1,5 @@
 ﻿<header class="navbar navbar-static-top">
     <div class="container">
-
-
-
-
-
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -12,18 +7,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="Default.aspx.htm" tppabs="http://www.yimihaodi.com/" class="navbar-brand"><img src="content/images/logo.png" tppabs="/content/images/logo.png"></a>
+            <a href="Default.aspx.htm" class="navbar-brand"><img src="/content/images/logo.png" ></a>
         </div>
         <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" aria-expanded="true">
             <ul class="nav navbar-nav navbar-right">
-                <li id="liHome" class="active"><a href="Default.aspx.htm" tppabs="http://www.yimihaodi.com/">首页</a></li>
-                <li id="liInvest"><a href="Project/ProjectList.htm" tppabs="http://www.yimihaodi.com/Project/ProjectList">投资项目</a></li>
-                <li id="liGuide"><a href="guide-3.aspx.htm" tppabs="http://www.yimihaodi.com/guide.aspx">新手指南</a></li>
-                <li id="liAbout"><a href="about-2.aspx.htm" tppabs="http://www.yimihaodi.com/about.aspx">关于我们</a></li>
+                <li id="liHome" class="active"><a href="/">首页</a></li>
+                <li id="liInvest"><a href="Project/ProjectList.htm">投资项目</a></li>
+                <li id="liGuide"><a href="guide-3.aspx.htm">新手指南</a></li>
+                <li id="liAbout"><a href="about-2.aspx.htm">关于我们</a></li>
                 <li class="lr-box">
-
-                    <a class="btn-login" href="User/Login.htm" tppabs="http://www.yimihaodi.com/User/Login"><img src="content/images/icon-lock.png" tppabs="http://www.yimihaodi.com/content/images/icon-lock.png">登录</a>
-                    <a class="btn-register" href="member/register.aspx.htm" tppabs="http://www.yimihaodi.com/member/register.aspx">注册</a>
+                    <a class="btn-login" href="@Url.Action("Login","Account")"><img src="/content/images/icon-lock.png">登录</a>
+                    <a class="btn-register" href="@Url.Action("Register","Account")">注册</a>
 
 
                 </li>

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Btcamp.Crowdfunding.Core.Infrastructure;
+using Btcamp.Crowdfunding.Core.Migrations;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +18,10 @@ namespace Btcamp.Crowdfunding.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>());
+            AutofacConfig.SetAutofacContainer();
+            AutoMapperConfig.RegisterMapper();
+
         }
     }
 }

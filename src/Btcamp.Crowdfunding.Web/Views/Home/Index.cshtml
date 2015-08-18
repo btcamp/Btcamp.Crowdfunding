@@ -489,6 +489,8 @@
     @Scripts.Render("~/home/scripts")
 
     <script type="text/javascript">
+        $(".ewm").hover(function () { $("#ewm_" + $(this).attr("t")).show(); }, function () { $("#ewm_" + $(this).attr("t")).hide(); });
+
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             paginationClickable: '.swiper-pagination',
