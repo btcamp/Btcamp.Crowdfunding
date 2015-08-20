@@ -34,6 +34,7 @@ namespace Btcamp.Crowdfunding.Web.Controllers
                 if (string.Equals(action, "logout", StringComparison.OrdinalIgnoreCase)) { return; }
                 if (string.Equals(action, "register", StringComparison.OrdinalIgnoreCase)) { return; }
                 if (string.Equals(action, "ValideEmail", StringComparison.OrdinalIgnoreCase)) { return; }
+                if (string.Equals(action, "code", StringComparison.OrdinalIgnoreCase)) { return; }
                 if (Request.IsAuthenticated)
                 {
                     AccountLoginStatusModel account = JsonConvert.DeserializeObject<AccountLoginStatusModel>(User.Identity.Name);

@@ -14,7 +14,7 @@ using System.Web.Security;
 
 namespace Btcamp.Crowdfunding.Web.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly IAccountService accountService = null;
         private readonly IUnitOfWork unitOfWork = null;
@@ -67,6 +67,16 @@ namespace Btcamp.Crowdfunding.Web.Controllers
             response.Msg = "登录成功";
             response.RedirectUrl = "/";
             return Json(response);
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            ResponseModel response = new ResponseModel();
+            response.Success = true;
+            response.Msg = "退出成功";
+            response.RedirectUrl = "/";
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
